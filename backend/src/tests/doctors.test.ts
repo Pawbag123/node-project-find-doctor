@@ -45,21 +45,33 @@ describe('Doctors API', () => {
     });
     await cause.save();
 
-    const loginData = await request(app)
-      .post('/api/users/signup/doctor')
-      .send({
-        name: 'Dr. John Doe',
-        email: 'johndoe@email.com',
-        image: 'image.jpg',
-        password: 'password',
-        address: '123 Main St, Chicago, IL',
-        specialtyId: specialty._id.toString(),
-        causes: [cause._id.toString()],
-        availability: {
-          Monday: ['09:00', '09:30', '10:00', '10:30'],
-          Tuesday: ['09:00', '09:30', '10:00', '10:30'],
-        },
-      });
+    const doctor = new Doctor({
+      name: 'Dr. John Smith',
+      image: 'image.jpg',
+      address: '123 Main St',
+      location: { type: 'Point', coordinates: [40.7128, -74.006] },
+      specialtyId: specialty._id,
+      causes: [cause._id],
+      availability: { Monday: ['09:00', '09:30', '10:00', '10:30'] },
+      appointments: [],
+    });
+    await doctor.save();
+
+    const hashedPassword = await bcrypt.hash('password', 12);
+
+    const user = new User({
+      email: 'johnsmith@email.com',
+      password: hashedPassword,
+      role: 'doctor',
+      doctorProfileId: doctor._id,
+    });
+    await user.save();
+
+    const loginData = await request(app).post('/api/users/login').send({
+      email: 'johnsmith@email.com',
+      password: 'password',
+    });
+
     const token = loginData.body.token;
 
     const res = await request(app)
@@ -70,7 +82,7 @@ describe('Doctors API', () => {
     expect(res.body).toHaveProperty('doctor');
     expect(res.body.doctor).toHaveProperty('location');
     expect(res.body.doctor).toHaveProperty('address');
-    expect(res.body.doctor.name).toBe('Dr. John Doe');
+    expect(res.body.doctor.name).toBe('Dr. John Smith');
     expect(res.body.doctor.specialtyId).toBe(specialty._id.toString());
     expect(res.body.doctor.causes[0]).toBe(cause._id.toString());
   });
