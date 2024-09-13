@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": "src",
+    // "paths": {
+    //   "@controllers/*": ["src/controllers/*"],
+    //   "@models/*": ["src/models/*"],
+    //   "@routes/*": ["src/routes/*"],
+    //   "@services/*": ["src/services/*"],
+    //   "@utils/*": ["src/utils/*"],
+    //   "@middleware/*": ["src/middleware/*"],
+    //   "@customTypes/*": ["src/types/*"]
+    // },
+    "outDir": "dist",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"]
+}

@@ -1,0 +1,35 @@
+/* DoctorConfigCauses.css */
+
+.causes-container {
+  margin-bottom: 20px; /* Space below the causes section */
+}
+
+.causes-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333; /* Dark gray text color */
+}
+
+.causes-container input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc; /* Light gray border */
+}
+
+.causes-container .cause-item {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #e0e0e0; /* Light gray background */
+  border-radius: 4px;
+}
+
+/* Ensure the select and buttons do not overflow */
+.causes-container .MuiFormControl-root {
+  width: calc(100% - 48px); /* Adjust width to account for buttons */
+}
+
+.causes-container .MuiIconButton-root {
+  margin-top: 16px; /* Space above the button */
+}

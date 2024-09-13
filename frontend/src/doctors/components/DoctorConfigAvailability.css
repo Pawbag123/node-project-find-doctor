@@ -1,0 +1,30 @@
+/* DoctorConfigAvailability.css */
+
+.availability-container {
+  margin-top: 20px; /* Space above availability section */
+  margin-bottom: 20px; /* Space below availability section */
+}
+
+.availability-container .MuiGrid-root {
+  margin-bottom: 8px; /* Space below each day's setting */
+}
+
+.availability-container .MuiTypography-root {
+  margin-right: 16px; /* Space between day label and time pickers */
+}
+
+.availability-container .MuiTextField-root {
+  width: 100%; /* Ensure time pickers take full width */
+}
+
+.MuiTypography-root {
+  color: black !important;
+}
+
+.MuiInputBase-input {
+  color: black !important;
+}
+
+.MuiInputLabel-root {
+  color: black !important;
+}

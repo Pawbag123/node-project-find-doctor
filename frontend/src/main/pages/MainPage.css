@@ -1,0 +1,10 @@
+/* frontend/src/main/pages/MainPage.css */
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensure the content takes the full height of the viewport */
+  padding: 20px;
+  box-sizing: border-box;
+}

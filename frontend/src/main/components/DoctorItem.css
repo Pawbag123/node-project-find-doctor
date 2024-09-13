@@ -1,0 +1,98 @@
+/* DoctorItem.css */
+
+.doctor-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff; /* White background for contrast */
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd; /* Lighter border for a cleaner look */
+  border-radius: 10px;
+  list-style-type: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.doctor-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* width: 500px; */
+}
+
+.main-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-info .name {
+  font-size: 20px; /* Larger font for the name */
+  font-weight: bold; /* Bold text for emphasis */
+  color: #333; /* Darker color for readability */
+  margin-bottom: 5px;
+}
+
+.additional-info {
+  display: flex;
+  flex-direction: column;
+  color: #555; /* Slightly lighter color for secondary info */
+}
+
+.additional-info .specialty {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 18px; /* Standard font size */
+}
+
+.additional-info .causes {
+  margin-bottom: 5px;
+  font-size: 14px; /* Standard font size */
+  margin-right: 10px;
+}
+
+.place-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+  justify-content: flex-end; /* Align to the bottom */
+}
+
+.place-info .address {
+  font-size: 16px; /* Font size for address */
+  font-weight: 500;
+  color: #555; /* Color for address */
+  margin-bottom: 5px; /* Space between address and distance */
+}
+
+.place-info .distance {
+  font-size: 14px; /* Standard font size for distance */
+  color: #777; /* Slightly lighter color for less emphasis */
+}
+
+button {
+  height: 100%; /* Make the button take up the full height of the item */
+  width: 100px; /* A fixed width for consistency */
+  font-size: 16px; /* Larger font size for the button text */
+  background-color: #007bff; /* Standard blue color for buttons */
+  color: #ffffff; /* White text on the button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
